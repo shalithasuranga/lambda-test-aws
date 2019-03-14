@@ -6,7 +6,7 @@ phases:
       - npm i -g serverless
   post_build:
     commands:
-      - serverless invoke local -f create-func
+      - serverless invoke local -f create_func
 artifacts:
   files:
     - '**/*'
