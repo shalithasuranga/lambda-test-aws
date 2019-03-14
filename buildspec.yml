@@ -4,7 +4,9 @@ phases:
     commands:
       - npm i
       - npm i -g serverless
-      - serverless invoke local create-func
+  post-build:
+    commands:
+      - serverless invoke local -f create-func
 artifacts:
   files:
     - '**/*'
