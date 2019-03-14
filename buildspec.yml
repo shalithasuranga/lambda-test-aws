@@ -1,0 +1,11 @@
+version: 0.2         
+phases:
+  build:
+    commands:
+      - npm i
+      - npm i -g serverless
+      - serverless invoke local create-func
+artifacts:
+  files:
+    - '**/*'
+  name: myname-$(date +%Y-%m-%d) 
