@@ -1,0 +1,23 @@
+service: test-func 
+
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+functions:
+  create_func:
+    handler: handler.create
+    events:
+      - http:
+          path: users/create
+          method: get
+  list_func:
+    handler: handler.list
+    events:
+      - http:
+          path: users
+          method: get
+
+plugins: 
+  - serverless-offline
