@@ -4,9 +4,7 @@
 
 module.exports.create = async (event, context) => {
   const output = {
-    task: 'create',
-    msg: event.input,
-    mysql: JSON.stringify(event)
+    message: 'done'
   };
   return {
     statusCode: 200,
@@ -17,12 +15,28 @@ module.exports.create = async (event, context) => {
 
 module.exports.list = async (event, context) => {
   const output = {
-    task: 'list',
-    msg: event.input
+    items: [
+      {
+        name: 'Pencil',
+        price: 12
+      },
+      {
+        name: 'Pen',
+        price: 10
+      },
+      {
+        name: 'Book',
+        price: 50
+      },
+      {
+        name: 'Bag',
+        price: 200
+      }
+    ]
   };
   return {
     statusCode: 200,
-    body: JSON.stringify(event),
+    body: JSON.stringify(output),
   };
 
 };
