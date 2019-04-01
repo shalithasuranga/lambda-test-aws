@@ -9,6 +9,9 @@ module.exports.create = async (event, context) => {
   return {
     statusCode: 200,
     body: JSON.stringify(output),
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    }
   };
 
 };
@@ -37,6 +40,9 @@ module.exports.list = async (event, context) => {
   return {
     statusCode: 200,
     body: JSON.stringify(output),
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    }
   };
 
 };
